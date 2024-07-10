@@ -14,7 +14,8 @@ import { DashboardPath } from '../../../constant/paths';
 const Adminroute = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
+      <Route path="/" >
+      <Route path="" element={<Navigate to="/admin/dashboard" replace />} />
       <Route path={DashboardPath.DASHBOARD} element={<Dashboard />} />
       <Route path={DashboardPath.TRANSACTIONS} element={<Transactions />} />
       <Route path={DashboardPath.PAYMENT_LINKS} element={<PaymentLinks />} />
@@ -26,6 +27,7 @@ const Adminroute = () => {
       <Route path="/payment-links/status" element={<PaymentStatusProgress />} />
 
       <Route path="*" element={<Navigate to="/pageNotFound" replace />} />
+      </Route>
     </Routes>
   );
 };
